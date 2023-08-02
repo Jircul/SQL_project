@@ -1,0 +1,17 @@
+CREATE OR REPLACE TABLE t_jiri_culka_project_SQL_primary_final AS (
+SELECT 
+	vp.name AS nazev_odvetvi,
+	vp.industry_branch_code AS kod_odvetvi,
+	vp.value AS prumerna_mzda,
+	vp.payroll_year AS rok_mezd,
+	vpz.name AS nazev_produktu,
+	vpz.value AS prumerna_cena,
+	vpz.price_value AS pocet_jednotek,
+	vpz.price_unit AS merna_jednotka,
+	vpz.date_from AS mereno_od,
+	vpz.date_to AS mereno_do
+FROM v_payroll vp
+JOIN v_price_zaklad vpz 
+	ON vp.payroll_year = year(vpz.date_from)
+GROUP BY year(vpz.date_from), vp.name, vpz.name
+)
