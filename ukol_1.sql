@@ -1,3 +1,5 @@
+/* Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají? */
+
 CREATE VIEW v_narust_prumerne_mzdy AS (
 SELECT 
 	t1.nazev_odvetvi,
