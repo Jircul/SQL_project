@@ -1,4 +1,4 @@
-primární tabulku jsem vytvořil z dvou views 
+/* primární tabulku jsem vytvořil z dvou views */
 
 -- první view
 	
